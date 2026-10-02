@@ -1,0 +1,70 @@
+.call-btn {
+  border-radius: 0.65rem;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.08
+  );
+
+  border: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+
+  padding: 0.55rem
+    0.8rem;
+
+  font-size: 0.85rem;
+
+  transition:
+    0.2s ease;
+}
+
+.call-btn:hover {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.15
+  );
+}
+
+.call-btn-danger {
+  border-radius: 0.65rem;
+
+  background: rgba(
+    239,
+    68,
+    68,
+    0.18
+  );
+
+  border: 1px solid
+    rgba(
+      239,
+      68,
+      68,
+      0.35
+    );
+
+  padding: 0.55rem
+    0.8rem;
+
+  font-size: 0.85rem;
+
+  color: #fecaca;
+}
+
+.call-btn-danger:hover {
+  background: rgba(
+    239,
+    68,
+    68,
+    0.28
+  );
+}

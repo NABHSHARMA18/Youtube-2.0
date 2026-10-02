@@ -78,12 +78,8 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
+
 
 body {
   background: var(--background);
@@ -131,5 +127,687 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+/* =====================================================
+   CUSTOM VIDEO PLAYER
+   ===================================================== */
+
+video {
+  outline: none;
+}
+
+/* Video timeline */
+
+input[type="range"] {
+  accent-color: #ef4444;
+}
+
+/* Custom timeline */
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: #ef4444;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: #ef4444;
+  cursor: pointer;
+}
+
+/* Volume slider */
+
+input[type="range"].volume-slider::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+}
+
+input[type="range"].volume-slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+}
+
+/* Remove default video focus outline */
+
+video:focus {
+  outline: none;
+}
+
+/* Smooth player */
+
+.custom-video-player {
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Prevent text selection while using controls */
+
+.custom-video-player button,
+.custom-video-player input {
+  user-select: none;
+}
+/* =====================================================
+   DAY 2 - CUSTOM VIDEO PLAYER
+   ===================================================== */
+
+.custom-video-player {
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Theater mode */
+
+.theater-video-player {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Video */
+
+.custom-video-player video {
+  outline: none;
+  display: block;
+}
+
+/* Range sliders */
+
+.custom-video-player input[type="range"] {
+  accent-color: #ef4444;
+}
+
+/* Timeline track */
+
+.custom-video-player
+  input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+}
+
+/* Timeline thumb */
+
+.custom-video-player
+  input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: #ef4444;
+  cursor: pointer;
+}
+
+/* Firefox */
+
+.custom-video-player
+  input[type="range"]::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+}
+
+.custom-video-player
+  input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: #ef4444;
+  cursor: pointer;
+}
+
+/* Volume */
+
+.custom-video-player
+  .volume-slider {
+  height: 16px;
+}
+
+/* Subtitle appearance */
+
+.custom-video-player
+  video::cue {
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 4px 8px;
+}
+
+/* Buttons */
+
+.custom-video-player button {
+  user-select: none;
+}
+
+/* Remove focus outline */
+
+.custom-video-player video:focus {
+  outline: none;
+}
+
+/* Smooth controls */
+
+.custom-video-player
+  .transition-opacity {
+  transition:
+    opacity 0.3s ease;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .custom-video-player
+    .volume-slider {
+    width: 55px;
+  }
+
+  .custom-video-player
+    .text-xs {
+    font-size: 10px;
+  }
+
+  .custom-video-player
+    button {
+    min-width: 30px;
+  }
+}
+/* =========================================
+   DAY 3 - WATCH PROGRESS
+========================================= */
+
+.custom-video-player {
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+.custom-video-player video {
+  display: block;
+  outline: none;
+}
+
+.custom-video-player video:focus {
+  outline: none;
+}
+
+.custom-video-player button {
+  user-select: none;
+}
+
+.custom-video-player input[type="range"] {
+  accent-color: #ef4444;
+}
+
+.custom-video-player input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+}
+
+.custom-video-player input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: #ef4444;
+  cursor: pointer;
+}
+
+.custom-video-player input[type="range"]::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+}
+
+.custom-video-player input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: #ef4444;
+  cursor: pointer;
+}
+
+.custom-video-player .volume-slider {
+  height: 16px;
+}
+
+.custom-video-player video::cue {
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 4px 8px;
+}
+
+.theater-video-player {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .custom-video-player .volume-slider {
+    width: 55px;
+  }
+
+  .custom-video-player .text-xs {
+    font-size: 10px;
+  }
+
+  .custom-video-player button {
+    min-width: 30px;
+  }
+}
+/* =========================================
+   DAY 4 - CUSTOM VIDEO PLAYER
+   HOVER PREVIEW + CONTROL POLISH
+========================================= */
+
+.custom-video-player {
+  position: relative;
+  background: #000;
+  overflow: hidden;
+  user-select: none;
+}
+
+.custom-video-player video {
+  display: block;
+  outline: none;
+}
+
+.custom-video-player video:focus {
+  outline: none;
+}
+
+.custom-video-player button {
+  user-select: none;
+}
+
+.custom-video-player input[type="range"] {
+  accent-color: #ef4444;
+}
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.custom-video-player
+  .timeline-container {
+  position: relative;
+  width: 100%;
+}
+
+.custom-video-player
+  input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+}
+
+.custom-video-player
+  input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: #ef4444;
+  cursor: pointer;
+}
+
+.custom-video-player
+  input[type="range"]::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+}
+
+.custom-video-player
+  input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: #ef4444;
+  cursor: pointer;
+}
+
+/* =========================================
+   VOLUME
+========================================= */
+
+.custom-video-player
+  .volume-slider {
+  height: 16px;
+}
+
+.custom-video-player
+  .volume-slider::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+}
+
+.custom-video-player
+  .volume-slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+}
+
+/* =========================================
+   SUBTITLES
+========================================= */
+
+.custom-video-player
+  video::cue {
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 4px 8px;
+}
+
+/* =========================================
+   THEATER MODE
+========================================= */
+
+.theater-video-player {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================
+   BUTTON HOVER
+========================================= */
+
+.custom-video-player
+  button {
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    opacity 0.2s ease;
+}
+
+.custom-video-player
+  button:active {
+  transform: scale(0.94);
+}
+
+/* =========================================
+   HOVER PREVIEW
+========================================= */
+
+.custom-video-player
+  .timeline-preview {
+  position: absolute;
+  z-index: 100;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+/* =========================================
+   CONTROL TRANSITION
+========================================= */
+
+.custom-video-player
+  .transition-opacity {
+  transition:
+    opacity 0.3s ease;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .custom-video-player
+    .volume-slider {
+    width: 55px;
+  }
+
+  .custom-video-player
+    .text-xs {
+    font-size: 10px;
+  }
+
+  .custom-video-player
+    button {
+    min-width: 30px;
+  }
+
+  .custom-video-player
+    .w-48 {
+    width: 160px;
+  }
+
+  .custom-video-player
+    .h-28 {
+    height: 95px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .custom-video-player
+    .volume-slider {
+    display: none;
+  }
+
+  .custom-video-player
+    .hidden-mobile {
+    display: none;
+  }
+}
+/* =========================================
+   DAY 5 - FINAL VIDEO PLAYER POLISH
+========================================= */
+
+.custom-video-player {
+  position: relative;
+  background: #000;
+  overflow: hidden;
+  user-select: none;
+}
+
+.custom-video-player video {
+  display: block;
+  outline: none;
+}
+
+.custom-video-player video:focus {
+  outline: none;
+}
+
+.custom-video-player button {
+  user-select: none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    opacity 0.2s ease;
+}
+
+.custom-video-player button:active {
+  transform: scale(0.94);
+}
+
+/* =========================================
+   RANGE INPUTS
+========================================= */
+
+.custom-video-player
+  input[type="range"] {
+  accent-color: #ef4444;
+}
+
+.custom-video-player
+  input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+}
+
+.custom-video-player
+  input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: #ef4444;
+  cursor: pointer;
+}
+
+.custom-video-player
+  input[type="range"]::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+}
+
+.custom-video-player
+  input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: #ef4444;
+  cursor: pointer;
+}
+
+/* =========================================
+   VOLUME
+========================================= */
+
+.custom-video-player
+  .volume-slider {
+  height: 16px;
+}
+
+/* =========================================
+   SUBTITLES
+========================================= */
+
+.custom-video-player
+  video::cue {
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 4px 8px;
+}
+
+/* =========================================
+   THEATER MODE
+========================================= */
+
+.theater-video-player {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================
+   HOVER PREVIEW
+========================================= */
+
+.custom-video-player
+  .timeline-preview {
+  position: absolute;
+  z-index: 100;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+/* =========================================
+   NEXT VIDEO COUNTDOWN
+========================================= */
+
+.custom-video-player
+  .next-video-overlay {
+  backdrop-filter: blur(4px);
+}
+
+/* =========================================
+   QUALITY BADGE
+========================================= */
+
+.custom-video-player
+  .quality-badge {
+  white-space: nowrap;
+}
+
+/* =========================================
+   CONTROL TRANSITION
+========================================= */
+
+.custom-video-player
+  .transition-opacity {
+  transition:
+    opacity 0.3s ease;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .custom-video-player
+    .volume-slider {
+    width: 55px;
+  }
+
+  .custom-video-player
+    .text-xs {
+    font-size: 10px;
+  }
+
+  .custom-video-player
+    button {
+    min-width: 30px;
+  }
+
+  .custom-video-player
+    .w-48 {
+    width: 160px;
+  }
+
+  .custom-video-player
+    .h-28 {
+    height: 95px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .custom-video-player
+    .volume-slider {
+    display: none;
   }
 }

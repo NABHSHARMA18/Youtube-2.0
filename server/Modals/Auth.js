@@ -37,6 +37,15 @@ const userschema = mongoose.Schema(
       default: Date.now,
     },
 
+    // ==============================
+    // THEME PREFERENCE
+    // ==============================
+
+    themePreference: {
+      type: String,
+      enum: ["light", "dark"],
+      default: null,
+    },
 
     // ==============================
     // SUBSCRIPTION INFORMATION
@@ -110,9 +119,7 @@ const userschema = mongoose.Schema(
   }
 );
 
-export default
+export default (
   mongoose.models.user ||
-  mongoose.model(
-    "user",
-    userschema
-  );
+  mongoose.model("user", userschema)
+);
